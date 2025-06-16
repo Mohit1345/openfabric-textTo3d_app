@@ -14,7 +14,7 @@ A sophisticated AI-powered application that converts text descriptions into 3D m
 ## 🎨 Recent Generations 
 
 
-![Generate Art](./screenshots/recent_generation.png)
+![Generate Art](./screenshots/recent_creations.png)
 
 ---
 
