@@ -1,10 +1,6 @@
 import logging
 from typing import Dict
 
-
-# import sys
-# sys.path.append('./utils')  # Ensure utils is in the path
-
 from utils.filehandle import save_image, save_model
 from utils.llmCall import call_llm_generate  
 from utils.memory_manager import MemoryManager
@@ -78,17 +74,6 @@ def config(configuration: Dict[str, ConfigClass], state: State) -> None:
 TEXT2IMG_APP_ID = 'c25dcd829d134ea98f5ae4dd311d13bc.node3.openfabric.network'
 IMG2_3D_APP_ID = '69543f294d414afc7f293d51591f11eb.node3.openfabric.network'
 
-# 69543f294d414afc7f293d51591f11eb
-# 69543f29-4d41-4afc-7f29-3d51591f11eb
-# 69543f29-4d41-4afc-7f29-3d51591f11eb
-# c2b38cec-6c61-4380-acec-f6c9650d3651
-
-# 69543f29-4d41-4afc-7f29-3d51591f11eb
-# 69543f294d414afc7f293d51591f11eb
-
-# c25dcd829d134ea98f5ae4dd311d13bc.node3.openfabric.network
-
-# f0b5f319156c4819b9827000b17e511a.node3.openfabric.network"
 def execute(model: AppModel) -> None:
     print("Incoming request:", model)
     request: InputClass = model.request
