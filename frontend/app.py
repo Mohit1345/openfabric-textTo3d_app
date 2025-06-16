@@ -280,8 +280,6 @@ st.markdown("""
 
 
 # --- Helper functions ---
-
-# <<< CORRECTION >>>: get_gallery_images_from_json is largely okay, but robust path checking will be done later.
 def get_gallery_images_from_json():
     """Extract gallery images and prompts from chat_data.json"""
     try:
@@ -411,7 +409,6 @@ def generate_random_positions(num_items):
 
 
 # --- Create Section ---
-# st.markdown('<div class="create-section">', unsafe_allow_html=True)
 st.markdown('<h2 class="section-title">🎨 Create New Masterpiece</h2>', unsafe_allow_html=True)
 
 col1, col2 = st.columns([3, 1])
@@ -456,14 +453,12 @@ if st.button("🚀 Generate Art", key="generate_btn"):
 
 
 # --- Data Loading and Filtering ---
-# <<< CORRECTION >>>: This is the key fix for the "blank spaces" problem.
 # We get all potential data, then filter it to keep only items with image files that actually exist.
 gallery_data = get_gallery_data()
 valid_gallery_data = [item for item in gallery_data if item.get('image_path') and os.path.exists(item['image_path'])]
 
 
 # --- Recent Creations Section ---
-# <<< CORRECTION >>>: Check if there are any *valid* items before rendering the section.
 if valid_gallery_data:
     #  class="recent-creations"
     st.markdown('<div>', unsafe_allow_html=True)
@@ -509,14 +504,12 @@ else:
 st.markdown('<div class="gallery-section">', unsafe_allow_html=True)
 st.markdown('<h2 class="section-title">🖼️ Complete Gallery</h2>', unsafe_allow_html=True)
 
-# <<< CORRECTION >>>: Use the pre-filtered `valid_gallery_data` list.
 if valid_gallery_data:
     st.markdown("### 🎨 Generated Artworks")
     cols = st.columns(3)
     
     for idx, item in enumerate(valid_gallery_data):
         with cols[idx % 3]:
-            # <<< CORRECTION >>>: Changed use_column_width to use_container_width to fix the warning.
             st.image(item['image_path'], caption=f"🎨 {item['filename']}", use_container_width=True)
             
             prompt_text = (item['original_prompt'][:100] + '...') if len(item['original_prompt']) > 100 else item['original_prompt']
