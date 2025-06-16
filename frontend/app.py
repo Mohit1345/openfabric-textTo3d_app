@@ -7,7 +7,6 @@ import os
 import base64
 import json
 import time
-# Assuming config.py contains something like: BACKEND_URL = "http://localhost:8000"
 from config import BACKEND_URL
 
 # Initialize session ID
