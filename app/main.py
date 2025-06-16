@@ -13,7 +13,6 @@ from core.stub import Stub
 
 from datetime import datetime
 import logging
-# At top
 
 # Configurations for the app
 configurations: Dict[str, ConfigClass] = dict()
