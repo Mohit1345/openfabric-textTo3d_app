@@ -2,6 +2,27 @@
 
 A sophisticated AI-powered application that converts text descriptions into 3D models through an intelligent pipeline featuring dual-memory systems and prompt enhancement capabilities.
 
+
+# 🌐 Web App Showcase: 
+
+## 🏠 Home Page
+
+![Home Page](./screenshots/home.png)
+
+---
+
+## 🎨 Image Generation Interface
+
+
+![Generate Art](./screenshots/generate.png)
+
+---
+
+## 🧠 AI-Enhanced Prompting
+
+![Prompt Expansion](./screenshots/prompt_enhance.png)
+---
+
 ## 🌟 Features
 
 - **Interactive Frontend**: Streamlit-based interface with intuitive controls
