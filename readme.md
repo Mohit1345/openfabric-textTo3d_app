@@ -5,22 +5,22 @@ A sophisticated AI-powered application that converts text descriptions into 3D m
 
 # 🌐 Web App Showcase: 
 
-## 🏠 Home Page
+## 🏠 Gnerate Page
 
 ![Home Page](./screenshots/home.png)
 
 ---
 
-## 🎨 Image Generation Interface
+## 🎨 Recent Generations 
 
 
-![Generate Art](./screenshots/generate.png)
+![Generate Art](./screenshots/recent_generation.png)
 
 ---
 
-## 🧠 AI-Enhanced Prompting
+## 🧠 Art Gallery 
 
-![Prompt Expansion](./screenshots/prompt_enhance.png)
+![Prompt Expansion](./screenshots/gallery.png)
 ---
 
 ## 🌟 Features
