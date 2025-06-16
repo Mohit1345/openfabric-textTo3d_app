@@ -8,6 +8,7 @@ import base64
 import json
 import time
 from config import BACKEND_URL
+import ast
 
 # Initialize session ID
 if "session_id" not in st.session_state:
@@ -429,10 +430,22 @@ if st.button("🚀 Generate Art", key="generate_btn"):
         with st.spinner("🎨 Creating your masterpiece..."):
             try:
                 response = requests.post(f"{BACKEND_URL}/execution", json=payload, timeout=300)
+                print("Response status code:", response.status_code)
+                print("Response text:", response.text)
+                
                 if response.status_code == 200:
-                    resp_json = response.json()
-                    response_data = resp_json.get('response', {})
+                    resp_json = ast.literal_eval(response.text)
+                    print("resp json", resp_json)
+                    # response_data = resp_json.get('response', {})
+                    # response_data = resp_json.get('result', {})
+                    response_data = resp_json
                     st.success(response_data.get('message', 'Art created successfully!'))
+        
+                        # Always extract just the filename from the full path (works even for container paths)
+                    filename = os.path.basename(response_data['image_path'])
+                    relative_path = os.path.join("..","app", "output", "images", filename)
+                    abs_path = os.path.abspath(relative_path)
+                    response_data["image_path"] = abs_path
                     
                     if "image_path" in response_data and os.path.exists(response_data["image_path"]):
                         st.image(response_data["image_path"], caption="🎨 Generated Artwork")
@@ -440,7 +453,6 @@ if st.button("🚀 Generate Art", key="generate_btn"):
                             st.download_button("💾 Download Image", f.read(), os.path.basename(response_data["image_path"]), "image/png")
                     elif "image_path" in response_data:
                         st.warning(f"⚠️ Generated image file not found at path: {response_data['image_path']}")
-                    # ... (rest of the response handling is fine) ...
                 else:
                     st.error(f"❌ Backend error: {response.status_code} - {response.text}")
             except requests.exceptions.RequestException as e:

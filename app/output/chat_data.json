@@ -130,5 +130,71 @@
                 "timestamp": "2025-06-16T18:00:47.440794"
             }
         ]
+    },
+    {
+        "session_end_time": "2025-06-16T18:59:08.703963",
+        "session_data": [
+            {
+                "original_prompt": "use the coin we generated and create a bundle of it\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A meticulously crafted, antique coin chest overflowing with shimmering, aged coins of the same design, partially open to reveal their intricate details. Soft, diffused light highlights the coins' surfaces.\n\n\nSimilar Prompts:\n1. indina rupee coin\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n\n2. clash of clans wizard\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n\n3. clash of clans main character\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750100348.png",
+                "timestamp": "2025-06-16T18:59:08.701054"
+            }
+        ]
+    },
+    {
+        "session_end_time": "2025-06-16T19:06:57.426928",
+        "session_data": [
+            {
+                "original_prompt": "an indian man with jalebi curvy style mustash making jalebi \n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A close-up, vibrant photograph. An Indian man, mid-40s, with a warm, genuine smile, meticulously crafting jalebi. His mustache is a classic, curving jalebi shape, glistening with syrup. Hands deftly manipulating the batter in a sizzling copper pan. Traditional Indian kitchen setting visible in the blurred background \u2013 colorful spices, brassware, and intricate patterns. Cinematic lighting, shallow depth of field, focusing on the hands and the delicious jalebi being formed.\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750100817.png",
+                "timestamp": "2025-06-16T19:06:57.424384"
+            }
+        ]
+    },
+    {
+        "session_end_time": "2025-06-16T20:17:14.547088",
+        "session_data": [
+            {
+                "original_prompt": "cake \n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A glistening, multi-tiered chocolate cake, adorned with fresh raspberries and gold leaf, sits on a velvet moss-covered table. Dramatic lighting, hyperrealistic.\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750105034.png",
+                "timestamp": "2025-06-16T20:17:14.544193"
+            }
+        ]
+    },
+    {
+        "session_end_time": "2025-06-16T20:18:05.111678",
+        "session_data": [
+            {
+                "original_prompt": "cake man\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A whimsical cake man, meticulously crafting a towering, multi-tiered rainbow cake. Hyperrealistic detail, vibrant colors, intricate icing decorations, soft studio lighting.\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750105085.png",
+                "timestamp": "2025-06-16T20:18:05.109557"
+            }
+        ]
+    },
+    {
+        "session_end_time": "2025-06-16T20:19:54.896587",
+        "session_data": [
+            {
+                "original_prompt": "dog and carr\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A bioluminescent wolf, meticulously crafted from polished obsidian, hunts a colossal, decaying carrion bird in a rain-slicked, neon-drenched cyberpunk city.\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750105194.png",
+                "timestamp": "2025-06-16T20:19:54.893775"
+            }
+        ]
+    },
+    {
+        "session_end_time": "2025-06-16T20:26:44.980527",
+        "session_data": [
+            {
+                "original_prompt": "women coloring\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "expanded_prompt": "A young woman with vibrant turquoise hair, meticulously coloring a detailed botanical illustration of a bioluminescent orchid, focused and serene, dappled light from a stained-glass window illuminating her workspace.\n\n\nSimilar Prompts:\n1. women coloring\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n\n2. man \n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n\n3. cake man\n\nYou are an expert prompt engineer who writes creative prompts without any extra questions or information. These prompts are used to generate images or 3D models, such as objects or game characters. Refer to the Short Term Memory Prompts below if needed:\n",
+                "image_path": "/openfabric/app/outputs/images/image_1750105604.png",
+                "timestamp": "2025-06-16T20:26:44.976630"
+            }
+        ]
     }
 ]

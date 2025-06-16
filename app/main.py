@@ -164,5 +164,5 @@ def execute(model: AppModel) -> None:
     # Final Response
     response.message = "✨ Success! Generated image and 3D model."
     response.image_path = image_path
-    response.model_path = None
+    response.model_path = ""
     response.session_id = request.session_id
