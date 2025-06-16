@@ -86,35 +86,43 @@ def execute(model: AppModel) -> None:
     vector_memory = VectorMemoryManager()
     memory_manager = MemoryManager()
 
-    # Step 1️⃣: Prompt Construction
+   # Step 1️⃣: Prompt Construction
     original_prompt = request.prompt or ""
-    short_term_prompts = "\n".join(
-        f"{i+1}. {st['original_prompt']} → {st['expanded_prompt']}"
-        for i, st in enumerate(memory_manager.short_term_memory)
-    )
-    original_prompt += (
-        "\n\nYou are an expert prompt engineer who writes creative prompts "
-        "without any extra questions or information. These prompts are used "
-        "to generate images or 3D models, such as objects or game characters. "
-        "Refer to the Short Term Memory Prompts below if needed:\n" + short_term_prompts
-    )
+    expanded_prompt = original_prompt  # default base
 
-    expanded_prompt = original_prompt  # fallback
+    #  Add short-term memory prompts always
+    if memory_manager.short_term_memory:
+        short_term_prompts = "\n".join(
+            f"{i+1}. {st['original_prompt']} → {st['expanded_prompt']}"
+            for i, st in enumerate(memory_manager.short_term_memory)
+        )
+        expanded_prompt += "\n\nRecent Related Prompts (Short-Term Memory):\n" + short_term_prompts
 
-    if request.ai_enhaned:
-        logging.info("🔍 Calling LLM to enhance prompt")
-        expanded_prompt = call_llm_generate(0, original_prompt)
 
+
+    # Append long-term memory if requested
     if request.recallLongTermMemory:
         logging.info("🔁 Recalling from long term memory")
-        similar_prompts = vector_memory.search_similar(original_prompt, top_k=3)
+        similar_prompts = vector_memory.search_similar(original_prompt, top_k=1)
         logging.info(f"Found {len(similar_prompts)} similar prompts in long term memory")
-        if len(similar_prompts)>0:
-            expanded_prompt += "\n\nSimilar Prompts:\n" + "\n".join(
+        if similar_prompts:
+            expanded_prompt += "\n\nSimilar Prompts (Long-Term Memory):\n" + "\n".join(
                 f"{i+1}. {sp['prompt']}" for i, sp in enumerate(similar_prompts)
             )
+        logging.info(f"Similar Prompts found long term are: {similar_prompts}")
 
-    logging.info(f"📝 Final Prompt: {expanded_prompt}")
+    # AI-enhance the full constructed prompt if enabled
+    if request.ai_enhaned:
+        llm_input_prompt = (
+            expanded_prompt + 
+            "\n\nYou are an expert prompt engineer who writes creative, structured prompts "
+            "for generating images or 3D models. Don't ask questions—just provide the final prompt."
+        )
+        logging.info("🤖 Enhancing prompt using LLM with full memory context")
+        expanded_prompt = call_llm_generate(0, llm_input_prompt)
+
+    logging.info(f"📝 Final Prompt sent for generation: {expanded_prompt}")
+
 
     # Step 2️⃣: Text to Image
     try:
@@ -156,7 +164,7 @@ def execute(model: AppModel) -> None:
     #     return
 
     # Step 4️⃣: Save Vector db
-    vector_memory.add_prompt(original_prompt, meta={
+    vector_memory.add_prompt(original_prompt + "\n" + expanded_prompt, meta={
         'image_path': image_path,
         # 'model_path': model_path,
         'timestamp': datetime.utcnow().isoformat()
