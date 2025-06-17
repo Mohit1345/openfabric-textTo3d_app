@@ -5,7 +5,7 @@ A sophisticated AI-powered application that converts text descriptions into 3D m
 
 # 🌐 Web App Showcase: 
 
-## 🏠 Genrate Page
+## 🏠 Generate Page
 
 ![Home Page](./screenshots/home.png)
 
